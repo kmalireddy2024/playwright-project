@@ -9,12 +9,13 @@ const mins = date.getMinutes();
 const seconds = date.getSeconds();
 const datetimestamp = year.toString() + "-" + month.toString() + "-" + day.toString() + "-" + hours.toString() + "-" + mins.toString() + "-" + seconds.toString()
 
+const myArray = []
+
 test('ShamrocksAllItems', async ({ page }) => {
   
   await page.goto('https://order.toasttab.com/online/shamrocks-pub-n-grill-4177-veterans-memorial-pkwy')
   let categories = await page.$$("//section[@role='tabpanel']")
   let outputFilePath = "/Users/kmalireddy/playwright-extracts/shamrocks_all_items_categories.csv"
-  const myArray = []
 
   for (let category of categories){
     let catName = await category.$$("div>h3")
@@ -50,7 +51,6 @@ test('OldeCityAllItems', async ({ page }) => {
   await page.goto('https://order.toasttab.com/online/olde-city-201-8th-ave')
   let categories = await page.$$("//section[@role='tabpanel']")
   let outputFilePath = "/Users/kmalireddy/playwright-extracts/oldecity_all_items_categories.csv"
-  const myArray = []
 
   for (let category of categories){
     let catName = await category.$$("div>h3")

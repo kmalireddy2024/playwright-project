@@ -10,7 +10,7 @@ const mins = date.getMinutes();
 const seconds = date.getSeconds();
 const datetimestamp = year.toString() + "-" + month.toString() + "-" + day.toString() + "-" + hours.toString() + "-" + mins.toString() + "-" + seconds.toString()
 
-test('Shamrocks', async ({ page }) => {
+test('ShamrocksOutOfStock', async ({ page }) => {
   await page.goto('https://order.toasttab.com/online/shamrocks-pub-n-grill-4177-veterans-memorial-pkwy')
   const outOfStockOptions = await page.$$("//li[contains(@class, 'outOfStock')]//a[contains(@data-testid, 'add-to-cart')]")
   console.log("NumberofOutofstock:" + outOfStockOptions.length)
@@ -26,7 +26,7 @@ test('Shamrocks', async ({ page }) => {
   links.close()
 });
 
-test('OldeCity', async ({ page }) => {
+test('OldeCityOutOfStock', async ({ page }) => {
   await page.goto('https://order.toasttab.com/online/olde-city-201-8th-ave')
   const outOfStockOptions = await page.$$("//li[contains(@class, 'outOfStock')]//a[contains(@data-testid, 'add-to-cart')]")
   console.log("NumberofOutofstock:" + outOfStockOptions.length)

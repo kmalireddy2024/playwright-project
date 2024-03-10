@@ -15,7 +15,7 @@ test('ShamrocksAllItems', async ({ page }) => {
   
   await page.goto('https://order.toasttab.com/online/shamrocks-pub-n-grill-4177-veterans-memorial-pkwy')
   let categories = await page.$$("//section[@role='tabpanel']")
-  let outputFilePath = "/Users/kmalireddy/playwright-extracts/shamrocks_all_items_categories.csv"
+  let outputFilePath = "/Meridioai-playwright/e2etests/extractedFiles/shamrocks_all_items_categories.csv"
 
   for (let category of categories){
     let catName = await category.$$("div>h3")
@@ -46,8 +46,7 @@ test('ShamrocksAllItems', async ({ page }) => {
 
 });
 
-test('OldeCityAllItems', async ({ page }) => {
-  
+test.skip('OldeCityAllItems', async ({ page }) => {
   await page.goto('https://order.toasttab.com/online/olde-city-201-8th-ave')
   let categories = await page.$$("//section[@role='tabpanel']")
   let outputFilePath = "/Users/kmalireddy/playwright-extracts/oldecity_all_items_categories.csv"
